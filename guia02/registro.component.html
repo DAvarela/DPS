@@ -1,0 +1,37 @@
+<div class="header">
+    <h1>Veterinaria Compas</h1>
+    <p>Registro de Clientes</p>
+    </div>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="nombre">
+    <label>Dui:</label>
+    <input type="text" [(ngModel)]="dui">
+    <label>Mascota:</label>
+    <input type="text" [(ngModel)]="nmascota">
+    <label>Medicamento:</label>
+    <input type="text" [(ngModel)]="Medicamento">
+    <label>Costo:</label>
+    <input type="text" [(ngModel)]="costo">
+    <button class="button" (click)="ingresar()">Ingresar</button>
+    <br/><br/>
+    <table [hidden]="contador == 0">
+    <thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Dui</th>
+    <th>Mascota</th>
+    <th>Tratamiento</th>
+    <th>Costo</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tcliente of registro">
+        <td>{{tcliente.nombre}}</td>
+        <td>{{tcliente.dui}}</td>
+        <td>{{tcliente.nmascota}}</td>
+        <td>{{tcliente.Medicamento}}</td>
+        <td>{{tcliente.costo}}</td>
+        </tr>
+        </tbody>
+        </table>
+        <app-combo-box></app-combo-box>
